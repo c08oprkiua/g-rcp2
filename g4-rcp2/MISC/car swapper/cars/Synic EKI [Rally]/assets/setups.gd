@@ -18,34 +18,36 @@ var setup:int = 0
 
 @onready var car_parent:ViVeCar = weakref(get_parent()).get_ref()
 
+#set gravel
 func _on_setup_1_pressed() -> void:
 	$setup1.release_focus()
 	for i:ViVeWheel in car_parent.all_wheels:
 		i.get_node(^"animation/camber/wheel/wheel 1").visible = true
 		i.get_node(^"animation/camber/wheel/wheel 2").visible = false
-		i.TyreSettings = tire_gravel
-		i.CompoundSettings = compound_gravel
+		i.tire_settings = tire_gravel
+		i.compound_settings = compound_gravel
 		i.Camber = 0.0
 		i.W_PowerBias = 1.0
-		i.AxleSettings = axle_gravel
+		i.axle_settings = axle_gravel
 		if i.name.begins_with("f"):
-			i.Suspension = suspension_gravel_front
+			i.suspension = suspension_gravel_front
 		elif i.name.begins_with("r"):
-			i.Suspension = suspension_gravel_rear
+			i.suspension = suspension_gravel_rear
 
+#set tarmac
 func _on_setup_2_pressed() -> void:
 	$setup2.release_focus()
 	for i:ViVeWheel in car_parent.all_wheels:
 		i.get_node(^"animation/camber/wheel/wheel 1").visible = false
 		i.get_node(^"animation/camber/wheel/wheel 2").visible = true
-		i.TyreSettings = tire_tarmac
-		i.CompoundSettings = compound_tarmac
-		i.AxleSettings = axle_tarmac
+		i.tire_settings = tire_tarmac
+		i.compound_settings = compound_tarmac
+		i.axle_settings = axle_tarmac
 		if i.name.begins_with("f"):
-			i.Suspension = suspension_tarmac_front
+			i.suspension = suspension_tarmac_front
 			i.Camber = 0.0
 			i.W_PowerBias = 0.5
 		elif i.name.begins_with("r"):
-			i.Suspension = suspension_tarmac_rear
+			i.suspension = suspension_tarmac_rear
 			i.Camber = -1.0
 			i.W_PowerBias = 1.0

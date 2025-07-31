@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ViVeTyreSettings" load_steps=2 format=3 uid="uid://bh3xhml3wl4fp"]
+[gd_resource type="Resource" script_class="ViVeTyreSettings" load_steps=3 format=3 uid="uid://bh3xhml3wl4fp"]
 
-[ext_resource type="Script" path="res://MAIN/wheel_stats/tyre_settings.gd" id="1_g1soo"]
+[ext_resource type="Script" uid="uid://dyu10jwsxsbut" path="res://MAIN/wheel_stats/tyre_settings.gd" id="1_g1soo"]
+[ext_resource type="ArrayMesh" uid="uid://cshbnnpxjvu3g" path="res://MISC/car swapper/cars/Synic EKI [Rally]/resources/tarmac/mesh.tres" id="1_ovbuu"]
 
 [resource]
 script = ExtResource("1_g1soo")
@@ -9,3 +10,4 @@ Width_mm = 205
 Aspect_Ratio = 45.0
 Rim_Size_in = 17
 AirPressure = 40.0
+TyreMesh = ExtResource("1_ovbuu")

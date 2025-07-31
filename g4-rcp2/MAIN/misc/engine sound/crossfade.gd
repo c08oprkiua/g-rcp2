@@ -98,4 +98,3 @@ func _physics_process(_delta:float) -> void:
 		var pit:float = clampf(absf(pitch * maxpitch), 0.01, 5.0)
 		
 		i.pitch_scale = pit
-

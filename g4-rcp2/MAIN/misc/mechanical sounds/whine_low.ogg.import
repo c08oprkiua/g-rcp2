@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://bc04yqh46sehf"
+uid="uid://t2bof0n5mjld"
 path="res://.godot/imported/whine_low.ogg-36ab16966e9307bbbb6acaa689bf8dd1.oggvorbisstr"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/whine_low.ogg-36ab16966e9307bbbb6acaa689bf8dd
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

@@ -5,12 +5,12 @@
 [resource]
 script = ExtResource("1_nsjsu")
 SpringStiffness = 120.0
-CompressionDampening = 6.0
-ReboundDampening = 9.0
+CompressionDampening = 15.0
+ReboundDampening = 20.0
 Deadzone = 0.0
-MaxCompression = 0.1
-AntiRollStiffness = 0.5
-AntiRollElasticity = 0.1
+MaxCompression = 0.2
+AntiRollStiffness = 0.0
+AntiRollElasticity = 0.0
 InclineArea = 0.2
 ImpactForce = 1.5
-RestPosition = -1.1
+RestPosition = -1.5

@@ -13,21 +13,21 @@ class_name ViVeTyreSmoke
 @onready var static_3:CPUParticles3D = $"static/lvl3"
 
 @onready var revolve_l:Node3D = $revolvel
-@onready var revolve_l_1:CPUParticles3D
-@onready var revolve_l_2:CPUParticles3D
-@onready var revolve_l_3:CPUParticles3D
+@onready var revolve_l_1:CPUParticles3D = $revolvel/lvl1
+@onready var revolve_l_2:CPUParticles3D = $revolvel/lvl2
+@onready var revolve_l_3:CPUParticles3D = $revolvel/lvl3
 
 @onready var revolve_r:Node3D = $revolver
-@onready var revolve_r_1:CPUParticles3D
-@onready var revolve_r_2:CPUParticles3D
-@onready var revolve_r_3:CPUParticles3D
+@onready var revolve_r_1:CPUParticles3D = $revolvel/lvl1
+@onready var revolve_r_2:CPUParticles3D = $revolver/lvl2
+@onready var revolve_r_3:CPUParticles3D = $revolver/lvl3
 
 var tyre_width:float
 
 const magic_number_1:float = 0.0030592
 
 func _ready() -> void:
-	tyre_width = wheel_self.TyreSettings.Width_mm
+	tyre_width = wheel_self.tire_settings.Width_mm
 
 func _physics_process(_delta:float) -> void:
 	visible = misc_graphics_settings.smoke

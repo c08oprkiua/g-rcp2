@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ViVeCarControls" load_steps=2 format=3 uid="uid://bn7o76sjiq87l"]
 
-[ext_resource type="Script" path="res://MAIN/car_stats/controls.gd" id="1_urd5g"]
+[ext_resource type="Script" uid="uid://cs71yjle13pal" path="res://MAIN/car_stats/controls.gd" id="1_urd5g"]
 
 [resource]
 script = ExtResource("1_urd5g")

@@ -9,7 +9,11 @@ const default_sky:Environment = preload("res://default_env.tres")
 ##NOTE:Using this is considered unsafe in comparison to calling [method ViVeEnvironment.get_singleton]
 static var singleton:ViVeEnvironment = null
 ##The current environment.
-var current_sky:Environment = environment
+var current_sky:Environment = environment:
+	set(new_env):
+		if current_sky != new_env:
+			current_sky = new_env
+			env_changed.emit()
 ##Debug mode for the car. This enables certain things that are, good for debugging or configuring cars,
 ##but otherwise would be needlessly taking performance away from the simulation.
 var Debug_Mode:bool = true
@@ -21,13 +25,13 @@ var clock_mult:float = 1.0
 @onready var car:ViVeCar = $"car":
 	set(new):
 		car = new
-		emit_signal("car_changed")
+		car_changed.emit()
 
 ##The currently loaded play scene.
 @onready var scene:Node3D = $"test scene":
 	set(new):
 		scene = new
-		emit_signal("scene_changed")
+		scene_changed.emit()
 
 @onready var sun:DirectionalLight3D = $"morning_sun"
 

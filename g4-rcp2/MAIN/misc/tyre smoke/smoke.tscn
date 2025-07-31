@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://q8oxthp1fyj5"]
+[gd_scene load_steps=13 format=4 uid="uid://q8oxthp1fyj5"]
 
-[ext_resource type="Script" path="res://MAIN/misc/tyre smoke/tyre_smoke.gd" id="1"]
+[ext_resource type="Script" uid="uid://ei2wg7lv6xva" path="res://MAIN/misc/tyre smoke/tyre_smoke.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ctggu2i2uiplr" path="res://MAIN/misc/tyre smoke/smoke.png" id="2_081ma"]
 [ext_resource type="Texture2D" uid="uid://bhnavtbeduelx" path="res://MAIN/misc/tyre smoke/sphere_normals.png" id="3_lelqg"]
 
@@ -56,26 +56,26 @@ resource_name = "None"
 render_priority = 0
 shader = SubResource("8")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_081ma")
 shader_parameter/particles_anim_h_frames = 1
 shader_parameter/particles_anim_v_frames = 1
 shader_parameter/particles_anim_loop = false
-shader_parameter/normal_scale = 1.0
-shader_parameter/texture_albedo = ExtResource("2_081ma")
 shader_parameter/texture_normal = ExtResource("3_lelqg")
+shader_parameter/normal_scale = 1.0
 
 [sub_resource type="ArrayMesh" id="10"]
 _surfaces = [{
 "aabb": AABB(-1, -1, 0, 2, 2.00001, 1e-05),
-"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAAA="),
 "format": 34359742487,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0),
+"index_data": PackedByteArray("AAABAAIAAwABAAAA"),
 "material": SubResource("9"),
 "name": "None",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 126, 191, 0, 0, 0, 0, 255, 255, 126, 191, 0, 0, 0, 0, 255, 255, 126, 191, 0, 0, 0, 0, 255, 255, 126, 191)
+"vertex_data": PackedByteArray("AACAvwAAgD8AAAAAAACAPwAAgL8AAAAAAACAvwAAgL8AAAAAAACAPwAAgD8AAAAAAAAAAP//fr8AAAAA//9+vwAAAAD//36/AAAAAP//fr8=")
 }]
 
 [sub_resource type="Curve" id="11"]

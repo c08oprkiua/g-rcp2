@@ -24,7 +24,7 @@ class_name ViVeCVT
 
 var cvt_accel:float
 
-func transmission_callback(rpm:float) -> float:
+func _transmission_callback(rpm:float) -> float:
 	clutch_engage_percent = (rpm - engage_rpm_thresh * (car.gas_pedal * a_throt_eff_thresh + (1.0 - a_throt_eff_thresh)) ) / engage_rpm
 	
 	#clutch_engage_percent = 1

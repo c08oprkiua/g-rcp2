@@ -153,8 +153,3 @@ func _physics_process(_delta:float) -> void:
 	whigh.max_db = whigh.volume_db
 	if car.whine_pitch / 100.0 > 0.0001:
 		whigh.pitch_scale = car.whine_pitch / 100.0
-
-
-
-
-

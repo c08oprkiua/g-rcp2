@@ -18,12 +18,12 @@ func _ready() -> void:
 	$wheel.queue_free()
 
 func clear() -> void:
-	for wheel:ViVeDebugWheelMonitor in appended:
-		wheel.queue_free()
+	for wheels:ViVeDebugWheelMonitor in appended:
+		wheels.queue_free()
 	appended = []
 
 func append_wheel(node:ViVeWheel) -> void:
-	var settings:ViVeTyreSettings = node.TyreSettings
+	var settings:ViVeTyreSettings = node.tire_settings
 	var pos:Vector3 = node.position
 	
 	var w_size:float = settings.get_size()
@@ -41,8 +41,8 @@ func append_wheel(node:ViVeWheel) -> void:
 	appended.append(w)
 
 func _physics_process(_delta:float) -> void:
-	for wheel:ViVeDebugWheelMonitor in appended:
-		wheel.update(size, vgs_scale)
+	for wheels:ViVeDebugWheelMonitor in appended:
+		wheels.update(size, vgs_scale)
 	
 	var vector_cache:float = gforce.abs().length()
 	glength = maxf(vector_cache / vgs_scale - 1.0, 0.0)

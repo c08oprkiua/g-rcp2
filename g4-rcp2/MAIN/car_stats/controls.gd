@@ -252,11 +252,14 @@ func get_steer_axis(external_analog:float = 0.0) -> float:
 		
 		if not is_zero_approx(steer_direction): #if the player is steering
 			if should_compensate: #steer at compensation speeds
-				steer_axis_amount = move_toward(steer_axis_amount, steer_direction, KeyboardCompensateSpeed)
+				steer_axis_amount += steer_direction * KeyboardCompensateSpeed
 			else: #steer at normal speeds
-				steer_axis_amount = move_toward(steer_axis_amount, steer_direction, KeyboardSteerSpeed)
+				steer_axis_amount +=  steer_direction * KeyboardSteerSpeed
 		else: #car is not steering
-			steer_axis_amount = move_toward(steer_axis_amount, 0.0, KeyboardReturnSpeed)
+			if absf(steer_axis_amount) > KeyboardReturnSpeed:
+				steer_axis_amount = move_toward(steer_axis_amount, 0.0, KeyboardReturnSpeed)
+			else:
+				steer_axis_amount = 0.0
 	
 	steer_axis_amount = clampf(steer_axis_amount, -1.0, 1.0)
 	

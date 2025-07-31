@@ -7,16 +7,14 @@ class_name ViVeTyreSettings
 @export var GripInfluence:float = 1.0:
 	set(new_influence):
 		GripInfluence = new_influence
-		if is_instance_valid(wheel_parent):
-			wheel_parent.set_physical_stats()
+		emit_changed()
 ##Width of the tyre, in millimeters.
 @export_range(0, 999999) var Width_mm:int = 185:
 	set(new_size):
 		Width_mm = new_size
 		static_wheel_stiffness = get_stiffness()
 		size = get_size()
-		if is_instance_valid(wheel_parent):
-			wheel_parent.set_physical_stats()
+		emit_changed()
 ##Aspect ratios are delivered in percentages. 
 ##Tire makers calculate the aspect ratio by dividing a tire's height off the rim by its width. 
 ##If a tire has an aspect ratio of 70, it means the tire's height is 70 percent of its width.
@@ -25,24 +23,29 @@ class_name ViVeTyreSettings
 		Aspect_Ratio = new_ratio
 		static_wheel_stiffness = get_stiffness()
 		size = get_size()
-		if is_instance_valid(wheel_parent):
-			wheel_parent.set_physical_stats()
+		emit_changed()
 ##Rim size, in inches(?).
 @export_range(0, 99999999) var Rim_Size_in:int = 14:
 	set(new_size):
 		Rim_Size_in = new_size
 		size = get_size()
-		if is_instance_valid(wheel_parent):
-			wheel_parent.set_physical_stats()
+		emit_changed()
 ##Air pressure of the tire, in PSI (hypothetical).
 @export var AirPressure:float = 30.0:
 	set(new_pressure):
 		AirPressure = new_pressure
-		if is_instance_valid(wheel_parent):
-			wheel_parent.set_physical_stats()
+		emit_changed()
+@export_group("Model")
+##The mesh of the tyre associated with these settings.
+@export var TyreMesh:Mesh = null
+##The default [Transform3D] of the tyre mesh.
+@export_storage var TyreMeshTransform:Transform3D = Transform3D()
+@export var TyreMeshPosition:Vector3:
+	get():
+		return TyreMeshTransform.origin
+	set(new_pos):
+		TyreMeshTransform.origin = new_pos
 
-##Reference to the owning/parent ViVeWheel
-var wheel_parent:ViVeWheel
 ##The stiffness, pre-calculated for faster retrieval
 var static_wheel_stiffness:float
 ##The size, pre-calculated for faster retrieval
@@ -54,7 +57,7 @@ func _init() -> void:
 
 ##Get the size of the tyre.
 func get_size() -> float:
-	#likely some conversion multiplier between meters and Godot units
+	#likely some conversion multiplier between meters and ViVe units
 	const magic_number_d:float = 0.003269
 	#1 inch is 25.4 millimeters
 	const inch_to_millimeters:float = 25.4

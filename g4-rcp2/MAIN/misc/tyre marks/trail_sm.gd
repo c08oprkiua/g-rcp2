@@ -60,7 +60,7 @@ func _process(_delta:float) -> void:
 	inserting = wheel_parent.slip_perc.length() > wheel_parent.grip + 20.0 and wheel_parent.is_colliding()
 	
 	position.y = - wheel_parent.w_size + 0.025
-	wid = wheel_parent.TyreSettings.Width_mm / 750.0
+	wid = wheel_parent.tire_settings.Width_mm / 750.0
 	
 	if not inserting2 == inserting:
 		inserting2 = inserting

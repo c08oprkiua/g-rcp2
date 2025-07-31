@@ -41,7 +41,7 @@ var actual_gear:int
 
 var speed_influence:float
 
-func transmission_callback(rpm:float) -> float:
+func _transmission_callback(rpm:float) -> float:
 	clutch_engage_percent = (rpm - engage_rpm_thresh * (car.gas_pedal * throt_eff_thresh + (1.0 - throt_eff_thresh)) ) / engage_rpm
 	
 	#if not car_controls.ShiftingAssistance == 2:
@@ -98,4 +98,3 @@ func transmission_callback(rpm:float) -> float:
 	else:
 		gear = actual_gear
 	return 0.0
-

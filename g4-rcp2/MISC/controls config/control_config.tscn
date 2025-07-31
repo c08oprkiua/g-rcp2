@@ -77,14 +77,14 @@ layout_mode = 2
 
 [node name="input_options" type="OptionButton" parent="Config/List"]
 layout_mode = 2
-item_count = 4
 selected = 1
+item_count = 4
 popup/item_0/text = "Keyboard & Mouse"
 popup/item_0/id = 1
 popup/item_1/text = "Keyboard"
 popup/item_1/id = 3
 popup/item_2/text = "Touch Controls"
-popup/item_2/id = 0
+popup/item_2/id = 2
 popup/item_3/text = "Joypad"
 popup/item_3/id = 2
 
@@ -97,10 +97,9 @@ var_name = &"ShiftingAssistance"
 
 [node name="value" type="OptionButton" parent="Config/List/ShiftingAssist"]
 layout_mode = 2
-item_count = 3
 selected = 2
+item_count = 3
 popup/item_0/text = "Assist off"
-popup/item_0/id = 0
 popup/item_1/text = "Automatic clutch"
 popup/item_1/id = 1
 popup/item_2/text = "Fully automatic"
@@ -114,6 +113,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Config/List/SteerAnalog"]
 layout_mode = 2
+focus_mode = 2
 text = "Analog Steering:"
 horizontal_alignment = 1
 
@@ -143,6 +143,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Config/List/SteerDigital"]
 layout_mode = 2
+focus_mode = 2
 text = "Digital Steering"
 horizontal_alignment = 1
 
@@ -222,6 +223,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Config/List/Throttle"]
 layout_mode = 2
+focus_mode = 2
 text = "Throttle"
 horizontal_alignment = 1
 
@@ -267,6 +269,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Config/List/Clutch"]
 layout_mode = 2
+focus_mode = 2
 text = "Clutch"
 horizontal_alignment = 1
 
@@ -312,6 +315,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Config/List/Handbrake"]
 layout_mode = 2
+focus_mode = 2
 text = "Handbrake"
 horizontal_alignment = 1
 
@@ -357,6 +361,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Config/List/Brake"]
 layout_mode = 2
+focus_mode = 2
 text = "Brake"
 horizontal_alignment = 1
 

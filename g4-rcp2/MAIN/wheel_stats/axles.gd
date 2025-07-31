@@ -16,4 +16,3 @@ class_name ViVeWheelAxle
 @export var Lateral_Mount_Pos:float = 0.0 #A_Geometry3
 ##Related to the camber.
 @export var Geometry4:float = 0.0
-

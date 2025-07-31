@@ -31,6 +31,8 @@ class_name ViVeWheelSuspension
 
 var parent_wheel:ViVeWheel = null
 
+signal recalculate_cache
+
 ##This gets the total suspension elasticity being applied to the wheel.
 ##When [sway_bar_influence] is passed in, the effects of the wheel's linked
 ##sway bar partner will be taken into account for the return value.

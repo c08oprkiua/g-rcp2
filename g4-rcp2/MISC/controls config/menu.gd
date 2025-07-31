@@ -3,13 +3,13 @@ extends HBoxContainer
 const file_name_template:String = "mapping_{}.tres"
 
 @onready var prof_name:LineEdit = $"JumpTo/ProfileName"
+@onready var preset_list:VBoxContainer = $"PresetSelect/List"
 
 var car:ViVeCar
 
-var user_root:String 
+var user_root:String
 var setting_count:int = 0
-
-var cache_assist_level:int
+var saved_mappings:Array[ViVeCarControls]
 
 func setcar() -> void:
 	car = weakref(ViVeEnvironment.get_singleton().car).get_ref()
@@ -34,13 +34,21 @@ func load_preset_list() -> void:
 	
 	if not DirAccess.get_files_at(user_root).is_empty():
 		var load_queue:PackedStringArray
+		setting_count = 0
 		
 		for files:String in DirAccess.get_files_at(user_root):
 			#check that they're actual tres files
 			if files == file_name_template.format(str(setting_count)):
 				load_queue.append(files)
+				setting_count += 1
 
-func process_presets() -> void:
+func add_preset(mapping:ViVeCarControls) -> void:
+	var new_button:Button
+	new_button.name = mapping.ControlMapName
+	
+	preset_list.add_child(new_button)
+
+func load_mapping() -> void:
 	pass
 
 func _on_top_pressed() -> void:
@@ -72,7 +80,9 @@ func _on_cancel_pressed() -> void:
 	ViVeEnvironment.get_singleton().emit_signal("car_changed")
 
 func _on_save_pressed() -> void:
-	pass # Replace with function body.
+	
+	ResourceSaver.save(ViVeGUIControlVariable.control_ref, user_root + file_name_template.format(str(setting_count)))
+
 
 #these misc options are directly connected up here
 func _on_input_options_item_selected(index: int) -> void:

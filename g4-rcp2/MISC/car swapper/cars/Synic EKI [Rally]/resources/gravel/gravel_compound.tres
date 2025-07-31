@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TyreCompoundSettings" load_steps=2 format=3 uid="uid://c6wwfepeeba11"]
 
-[ext_resource type="Script" path="res://MAIN/wheel_stats/wheel_compound.gd" id="1_npbvy"]
+[ext_resource type="Script" uid="uid://buhswghljppme" path="res://MAIN/wheel_stats/wheel_compound.gd" id="1_npbvy"]
 
 [resource]
 script = ExtResource("1_npbvy")

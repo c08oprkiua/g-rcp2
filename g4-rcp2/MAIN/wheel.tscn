@@ -1,13 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://df2i30irlljkl"]
+[gd_scene load_steps=12 format=3 uid="uid://df2i30irlljkl"]
 
-[ext_resource type="Script" path="res://MAIN/wheel.gd" id="1"]
+[ext_resource type="Script" uid="uid://bw3e5e7ipksma" path="res://MAIN/wheel.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://q8oxthp1fyj5" path="res://MAIN/misc/tyre smoke/smoke.tscn" id="2"]
-[ext_resource type="Script" path="res://MAIN/wheel_stats/tyre_settings.gd" id="2_ovc4w"]
-[ext_resource type="Script" path="res://MAIN/misc/forces debug/forces.gd" id="3"]
-[ext_resource type="Script" path="res://MAIN/wheel_stats/wheel_compound.gd" id="3_fuy7d"]
-[ext_resource type="Script" path="res://MAIN/wheel_stats/axles.gd" id="4_2lr60"]
+[ext_resource type="Script" uid="uid://dyu10jwsxsbut" path="res://MAIN/wheel_stats/tyre_settings.gd" id="2_ovc4w"]
+[ext_resource type="Script" uid="uid://buhswghljppme" path="res://MAIN/wheel_stats/wheel_compound.gd" id="3_fuy7d"]
+[ext_resource type="Script" uid="uid://b65essy21pa2r" path="res://MAIN/wheel_stats/axles.gd" id="4_2lr60"]
 [ext_resource type="PackedScene" uid="uid://bg3o1u5r81wfs" path="res://MAIN/misc/tyre marks/tyremark.tscn" id="4_11cem"]
-[ext_resource type="Script" path="res://MAIN/wheel_stats/suspension.gd" id="5_mshle"]
+[ext_resource type="Script" uid="uid://d21utraf6k835" path="res://MAIN/wheel_stats/suspension.gd" id="5_mshle"]
 
 [sub_resource type="Resource" id="Resource_6f42m"]
 script = ExtResource("2_ovc4w")
@@ -49,15 +48,6 @@ InclineArea = 0.2
 ImpactForce = 1.5
 RestPosition = -2.7
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pj25r"]
-shading_mode = 0
-diffuse_mode = 1
-disable_ambient_light = true
-
-[sub_resource type="PointMesh" id="1"]
-
-[sub_resource type="BoxMesh" id="2"]
-
 [node name="wheel" type="RayCast3D"]
 target_position = Vector3(0, -2.7, 0)
 script = ExtResource("1")
@@ -65,27 +55,6 @@ TyreSettings = SubResource("Resource_6f42m")
 CompoundSettings = SubResource("Resource_2cpg8")
 AxleSettings = SubResource("Resource_avq1u")
 Suspension = SubResource("Resource_ejkly")
-
-[node name="geometry" type="MeshInstance3D" parent="."]
-visible = false
-material_override = SubResource("StandardMaterial3D_pj25r")
-mesh = SubResource("1")
-script = ExtResource("3")
-
-[node name="compress" type="MeshInstance3D" parent="geometry"]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_pj25r")
-mesh = SubResource("2")
-
-[node name="lateral" type="MeshInstance3D" parent="geometry"]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_pj25r")
-mesh = SubResource("2")
-
-[node name="longi" type="MeshInstance3D" parent="geometry"]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_pj25r")
-mesh = SubResource("2")
 
 [node name="animation" type="Marker3D" parent="."]
 

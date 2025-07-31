@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ViVeWheelSuspension" load_steps=2 format=3 uid="uid://bbp6jtlydrlea"]
 
-[ext_resource type="Script" path="res://MAIN/wheel_stats/suspension.gd" id="1_oljn6"]
+[ext_resource type="Script" uid="uid://d21utraf6k835" path="res://MAIN/wheel_stats/suspension.gd" id="1_oljn6"]
 
 [resource]
 script = ExtResource("1_oljn6")

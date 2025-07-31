@@ -24,7 +24,7 @@ var clutch_engage_percent:float = 0.0
 ##[br]
 ##crankshaft_rpm is the raw RPM coming from the engine. The return value of this function 
 ##is the RPM as affected by the transmission, ie. the driveshaft RPM.
-func transmission_callback(rpm:float) -> float:
+func _transmission_callback(rpm:float) -> float:
 	return rpm
 
 ##Called when the engine wants to know what gear the car is in.
@@ -32,5 +32,5 @@ func transmission_callback(rpm:float) -> float:
 ##[br]0, which means the car is in neutral.
 ##[br]-1, which means the car is in reverse.
 ##[br]-2, which means the car is generically going forward ("in drive"), with no specific gear.
-func get_current_gear() -> int:
+func _get_current_gear() -> int:
 	return NEUTRAL

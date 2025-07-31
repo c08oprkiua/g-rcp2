@@ -379,6 +379,7 @@ focus_mode = 0
 text = "change scene"
 
 [node name="Window" type="Window" parent="."]
+transparent_bg = true
 initial_position = 1
 size = Vector2i(764, 300)
 visible = false
@@ -397,6 +398,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+current_tab = 0
 clip_tabs = false
 tab_focus_mode = 0
 
@@ -404,6 +406,7 @@ tab_focus_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+metadata/_tab_index = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Window/TabContainer/Information"]
 layout_mode = 2
@@ -524,6 +527,7 @@ clip_text = true
 visible = false
 layout_mode = 2
 script = ExtResource("5")
+metadata/_tab_index = 1
 
 [node name="container" type="VBoxContainer" parent="Window/TabContainer/Graphics Config"]
 layout_mode = 2
@@ -561,6 +565,7 @@ text = "Fullscreen"
 visible = false
 layout_mode = 2
 script = ExtResource("4")
+metadata/_tab_index = 2
 
 [node name="container" type="GridContainer" parent="Window/TabContainer/Change Scene"]
 layout_mode = 2
@@ -598,6 +603,7 @@ stretch_mode = 5
 visible = false
 layout_mode = 2
 script = ExtResource("10")
+metadata/_tab_index = 3
 
 [node name="container" type="GridContainer" parent="Window/TabContainer/Swap Car"]
 layout_mode = 2
@@ -630,6 +636,7 @@ stretch_mode = 5
 [node name="Control Config" parent="Window/TabContainer" instance=ExtResource("14_uuebq")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 4
 
 [connection signal="pressed" from="open controls" to="Window" method="_on_open_controls_pressed"]
 [connection signal="pressed" from="fix engine" to="." method="engine_restart"]

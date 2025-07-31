@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_k7cxo")
-Vertical_Mount = 1.4
+Vertical_Mount = 1.2
 Camber_Gain = 0.0
 Lateral_Mount_Pos = 0.0
 Geometry4 = 0.0

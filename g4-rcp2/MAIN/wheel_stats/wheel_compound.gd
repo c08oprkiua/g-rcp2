@@ -12,8 +12,7 @@ class_name TyreCompoundSettings
 @export var TractionFactor:float = 1.0:
 	set(new_factor):
 		TractionFactor = new_factor
-		if is_instance_valid(wheel_parent):
-			wheel_parent.set_physical_stats()
+		emit_changed()
 
 @export var DeformFactor:float = 1.0
 ##This is affected by the fore friction of the ground.
@@ -26,6 +25,3 @@ class_name TyreCompoundSettings
 @export var BuildupAffection:float = 1.0
 ##@experimental Tyre Cooldown Rate. (Currently isn't used).
 @export var CoolRate:float = 0.000075
-
-##Reference to the owning/parent ViVeWheel
-var wheel_parent:ViVeWheel
